@@ -378,18 +378,18 @@
       <div class="container">
         <div class="row">
           <div class="card col-md-12 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-            <form method="POST" action="/form" class="card-body">
+            <form method="POST" action="/" onsubmit="return submitUserForm();" class="card-body">
               
               <div class="g-recaptcha" data-sitekey="6LdnMmImAAAAANiCiabiFoEHzIKVqTiY6ihk0ZUM" data-callback="verifyCaptcha"></div>
               <div id="g-recaptcha-error"></div>
 
               <h3>CONTACTO</h3>
               <label for="name" class="text-muted">Nombre</label>
-              <input type="text" name="name" id="name"class="form-control" placeholder="Nombre">
+              <input type="text" name="name" id="name"class="form-control" placeholder="Nombre" required="required">
               <label for="email" class="text-muted">Correo Electrónico</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico">
+              <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico" required="required">
               <label for="message" class="text-muted">Mensaje</label>
-              <textarea name="message" id="message" class="form-control border"></textarea>
+              <textarea name="message" id="message" class="form-control border" required="required" ></textarea>
               <input type="submit" class="btn btn-lg bg-primary" value="Contactar">
             </form>
           </div>
