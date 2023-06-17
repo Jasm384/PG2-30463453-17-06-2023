@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <meta property="og:title" content="Login" />
+    <meta property="og:type" content="Login" />
+    <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="410114851897-63psg9avuqqusagaddkhvb1hc90nl1av.apps.googleusercontent.com">
+    <!-- Script de google -->
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            console.log('Image URL: ' + profile.getImageUrl());
+        }
+    </script>
+</head>
+<body>
+    <div class="global-container">
+        <div class="card login-form">
+            <div class="card-body">
+                <h3 class="card-title text-center">Incia sesion para continuar</h3>
+                    <div class="card-text">
+                <!--
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                    <form action="/login" method="post">
+                    <!-- to error: add class "has-danger" -->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Usuario</label>
+                            <input required="required" name="user" type="text" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Contraseña</label>
+                        <!-- <a href="#" style="float:right;font-size:12px;">Forgot password?</a> -->
+                            <input required="required" name="pass" type="text" class="form-control form-control-sm" id="exampleInputPassword1">
+                        </div>
+                        <% if (error) { %>
+                            <div class="alert alert-danger">
+                                <span><%= error %></span>
+                            </div>
+                        <% } %>
+
+                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+                    <!-- <div class="sign-up">
+                        Don't have an account? <a href="#">Create One</a> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
