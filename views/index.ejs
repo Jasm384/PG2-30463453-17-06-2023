@@ -103,7 +103,7 @@
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Habilidades</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experiencia</a></li>
             <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Educacion</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="login.ejs">Login</a></li>
+            
           </ul>
         </div>
       </div>
@@ -378,16 +378,10 @@
       <div class="container">
         <div class="row">
           <div class="card col-md-12 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-            
-            
-            <form method="POST" action="/" onsubmit="return submitUserForm();" class="card-body">
-              
-              <div class="g-recaptcha" data-sitekey="6LdnMmImAAAAANiCiabiFoEHzIKVqTiY6ihk0ZUM" data-callback="verifyCaptcha"></div>
-              <div id="g-recaptcha-error"></div>
-
+            <form method="POST" action="/form" class="card-body">
               <h3>CONTACTO</h3>
               <label for="name" class="text-muted">Nombre</label>
-              <input type="text" name="name" id="name"class="form-control" placeholder="Nombre" required="required">
+              <input type="text" name="name" id="name"class="form-control" placeholder="Nombre">
               <label for="email" class="text-muted">Correo Electrónico</label>
               <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico">
               <label for="message" class="text-muted">Mensaje</label>
