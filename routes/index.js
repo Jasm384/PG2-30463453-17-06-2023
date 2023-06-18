@@ -86,7 +86,7 @@ router.post('/', function(req, res, next) {
     nombre: name,
     from: 'test009@arodu.dev',
     //to: "programacion2ais@dispostable.com",
-    to: 'juliansojo39@gmail.com',
+    to: "juliansojo39@gmail.com",
     to: email,
     subject: 'Contacto desde el formulario',
 
